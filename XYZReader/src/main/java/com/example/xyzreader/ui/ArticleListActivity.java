@@ -1,6 +1,5 @@
 package com.example.xyzreader.ui;
 
-import android.app.ActivityOptions;
 import android.app.LoaderManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -134,20 +133,7 @@ public class ArticleListActivity extends ActionBarActivity implements
                 public void onClick(View view) {
                     Intent intent = new Intent(Intent.ACTION_VIEW,
                             ItemsContract.Items.buildItemUri(getItemId(vh.getAdapterPosition())));
-
-                    Bundle bundle = null;
-                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
-
-                        bundle = ActivityOptions
-                                .makeSceneTransitionAnimation(
-                                        ArticleListActivity.this,
-                                        vh.getThumbnailView(),
-                                        vh.getThumbnailView().getTransitionName()
-                                ).toBundle();
-
-                    }
-
-                    startActivity(intent, bundle);
+                    startActivity(intent);
                 }
             });
             return vh;

@@ -24,7 +24,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    android:transitionName="@string/transition_photo"
                     />
 
                 <!--<View
@@ -108,6 +107,8 @@
         android:layout_marginRight="@dimen/fab_margin"
         android:contentDescription="@string/action_share"
         android:src="@drawable/ic_share"
+        android:stateListAnimator="@anim/fab_state_list_anim"
+        app:elevation="@dimen/fab_elevation"
         app:fabSize="normal"
         />
 
